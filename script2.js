@@ -1,9 +1,32 @@
 window.onload = inicio;
 
+let bool = true;
+
 function inicio() {
   console.log("entro en inicio");
   let btnAceptar = document.getElementById("aceptar");
   btnAceptar.onclick = obtenerDatos;
+
+  let accion = document.getElementById("cargar");
+
+  accion.onsubmit= function(){
+
+    let smCi = document.getElementById("smCiclo");
+    let smMo = document.getElementById("smModulos");
+    let smCu = document.getElementById("smCurso");
+    let smNo = document.getElementById("smNombre");
+    let smHo = document.getElementById("smHoras");
+
+
+    if(ciclo==null && modulos==null && curso==null && nombre == null && horas == null){
+      bool=false;
+      smCi.innerHTML="*Campo Obligatorio";
+      smMo.innerHTML="*Campo Obligatorio";
+      smCu.innerHTML="*Campo Obligatorio";
+      smNo.innerHTML="*Campo Obligatorio";
+      smHo.innerHTML="*Campo Obligatorio";
+    }
+  }
 }
 
 function obtenerDatos() {
